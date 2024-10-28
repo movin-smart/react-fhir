@@ -4,16 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>SMART on FHIR Launch</title>
+  <!-- You may include your CSS or other head elements here -->
 </head>
 <body>
   <script type="module">
-    import { authorize } from "fhirclient";
+    import FHIR from '/node_modules/fhirclient/lib/fhirclient.js'; // Adjust the path as needed
 
-    authorize({
-      clientId: import.meta.env.VITE_FHIR_CLIENT_ID,
+    const clientId = "7f70d5fd-b715-4ac6-b1db-1d5cc3182f2e"; // You can also set this directly or fetch from a config
+    const redirectUri = "https://movin-smart.github.io/react-fhir/my-vite-app/public/index.html"; // Set this directly or fetch from a config
+    const issuer = "https://fhir.sandboxcerner.com/dstu2/"; // Set this directly or fetch from a config
+
+    FHIR.oauth2.authorize({
+      client_id: clientId,
       scope: "launch/patient openid fhirUser",
-      redirectUri: import.meta.env.VITE_FHIR_REDIRECT_URI,
-      iss: import.meta.env.VITE_FHIR_ISSUER,
+      redirect_uri: redirectUri,
+      iss: issuer,
     });
   </script>
 </body>

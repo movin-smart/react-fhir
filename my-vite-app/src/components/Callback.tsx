@@ -1,6 +1,8 @@
 // src/components/Callback.tsx
-import React, { useEffect } from 'react';
+import * as React from 'react'; // Correct way to import React
+import { useEffect } from 'react';
 import FHIR from 'fhirclient';
+
 
 const Callback: React.FC = () => {
   useEffect(() => {

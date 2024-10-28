@@ -46,37 +46,37 @@
 
 
 // // src/App.tsx
-// import React from 'react';
-// import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-// import Authorize from './components/Authorize';
-// import Callback from './components/Callback';
+import * as React from 'react'; 
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
-// import PatientData from './components/PatientData';
-
-// const App: React.FC = () => {
-//   return (
-//     <Router>
-//       <Routes>
-//         <Route path="/" element={<Authorize />} />
-//         <Route path="/callback" element={<Callback />} />
-//         <Route path="/patient" element={<PatientData />} />
-//       </Routes>
-//     </Router>
-//   );
-// };
-
-// export default App;
-
-
-
-import React from 'react';
+import PatientData from './components/PatientData';
+import Callback from './components/Callback';
+import Authorize from './components/Authorize';
 
 const App: React.FC = () => {
   return (
-    <div>
-      <h1>Hello, SMART on FHIR!</h1>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Authorize />} />
+        <Route path="/callback" element={<Callback />} />
+        <Route path="/patient" element={<PatientData />} />
+      </Routes>
+    </Router>
   );
 };
 
 export default App;
+
+
+
+// import React from 'react';
+
+// const App: React.FC = () => {
+//   return (
+//     <div>
+//       <h1>Hello, SMART on FHIR!</h1>
+//     </div>
+//   );
+// };
+
+// export default App;

@@ -1,5 +1,7 @@
 // src/components/PatientData.tsx
-import React, { useEffect, useState } from 'react';
+import * as React from 'react'; 
+import { useEffect } from 'react';
+import { useState } from 'react';
 import FHIR from 'fhirclient';
 
 const PatientData: React.FC = () => {

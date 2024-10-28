@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SMART on FHIR Launch</title>
+</head>
+<body>
+  <script type="module">
+    import { authorize } from "fhirclient";
+
+    authorize({
+      clientId: import.meta.env.VITE_FHIR_CLIENT_ID,
+      scope: "launch/patient openid fhirUser",
+      redirectUri: import.meta.env.VITE_FHIR_REDIRECT_URI,
+      iss: import.meta.env.VITE_FHIR_ISSUER,
+    });
+  </script>
+</body>
+</html>

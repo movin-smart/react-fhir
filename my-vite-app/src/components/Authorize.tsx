@@ -7,7 +7,7 @@ const Authorize: React.FC = () => {
     FHIR.oauth2.authorize({
       client_id: '<your-client-id>',
       scope: 'patient/Patient.read patient/Observation.read launch online_access openid profile',
-      redirectUri: window.location.origin + '/callback'
+      redirectUri: 'https://movin-smart.github.io/react-fhir/my-vite-app/callback'
     });
   }, []);
 
